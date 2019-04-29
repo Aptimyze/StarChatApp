@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "489170938445",
+    "firebase_url": "https://bestchatapp-3e13b.firebaseio.com",
+    "project_id": "bestchatapp-3e13b",
+    "storage_bucket": "bestchatapp-3e13b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489170938445:android:01ebd273ef452bb8",
+        "android_client_info": {
+          "package_name": "com.varunsaini.android.bestchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489170938445-8s3q3frb9486kgra3eh3aem0254egjbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBipT0_xCdl3tkYGxxTRWCzFqbULJWv4Jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489170938445-8s3q3frb9486kgra3eh3aem0254egjbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
