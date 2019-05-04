@@ -10,18 +10,19 @@ import android.widget.TextView;
 
 import com.varunsaini.android.bestchatapp.R;
 
-class AllFragmentsRecycler extends RecyclerView.Adapter {
+public class AllFragmentsRecycler extends RecyclerView.Adapter<AllFragmentsRecycler.AllFragmentViewHolder> {
     public AllFragmentsRecycler(Context context) {
     }
 
+
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public AllFragmentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return null;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull AllFragmentViewHolder allFragmentViewHolder, int i) {
 
     }
 
