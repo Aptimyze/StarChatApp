@@ -78,9 +78,15 @@ public class ChatScreenActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
         String format = simpleDateFormat.format(new Date());
-        chatScreenViewModel.writeNewMessageOTO(message_et.getText().toString(),senderUID,recieverUID,senderName,format);
+        chatScreenViewModel.writeNewMessageOTO(message_et.getText().toString(),senderUID,recieverUID,senderName,recieverUserName,format);
         chatScreenViewModel.getAllOneToOneMessages(senderUID,recieverUID);
         message_et.setText("");
         Log.d("sas", "onClick: "+"in activity");
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        chatScreenViewModel.turnBooleanMsgReadTrue(senderUID,recieverUID);
     }
 }

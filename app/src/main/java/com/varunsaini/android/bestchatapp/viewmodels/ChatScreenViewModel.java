@@ -21,8 +21,8 @@ public class ChatScreenViewModel extends AndroidViewModel {
         repository = new Repository(application);
     }
 
-    public void writeNewMessageOTO(String messageText, String senderID, String recieverID, String senderName, String timeStamp) {
-        repository.writeNewMessageOTO(messageText,senderID,recieverID,senderName,timeStamp);
+    public void writeNewMessageOTO(String messageText, String senderID, String recieverID, String senderName, String recieverName, String timeStamp) {
+        repository.writeNewMessageOTO(messageText,senderID,recieverID,senderName,recieverName ,timeStamp);
     }
 
     public LiveData<List<OneToOneMessageModel>> getAllOneToOneMessages(String senderID,String recieverID){
@@ -37,4 +37,7 @@ public class ChatScreenViewModel extends AndroidViewModel {
         return oneToOneListLive;
     }
 
+    public void turnBooleanMsgReadTrue(String senderUID, String recieverUID) {
+        repository.turnBooleanMsgReadTrue(senderUID,recieverUID);
+    }
 }

@@ -12,5 +12,10 @@
         android:state_checked="false"
         android:icon="@drawable/ic_group_black_24dp"
         android:title="Groups" />
+    <item
+        android:id="@+id/action_account"
+        android:state_checked="false"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Account" />
 
 </menu>

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.util.Log;
 
+import com.varunsaini.android.bestchatapp.models.AllChatRecieverInfoModel;
 import com.varunsaini.android.bestchatapp.models.OneToOneMessageModel;
 import com.varunsaini.android.bestchatapp.models.SearchedUserModel;
 import com.varunsaini.android.bestchatapp.network.Firebase;
@@ -32,12 +33,20 @@ public class Repository {
         return firebase.returnMatchedUsers(search_text);
     }
 
-    public void writeNewMessageOTO(String messageText, String senderID, String recieverID,String senderName, String timeStamp) {
-        firebase.writeNewMessageOTO(messageText,senderID,recieverID,senderName, timeStamp);
+    public void writeNewMessageOTO(String messageText, String senderID, String recieverID,String senderName,String recieverName, String timeStamp) {
+        firebase.writeNewMessageOTO(messageText,senderID,recieverID,senderName,recieverName, timeStamp);
     }
 
     public LiveData<List<OneToOneMessageModel>> getAllOneToOneMessages(String combinedId) {
         Log.d("sas", "onClick: "+"in repo");
         return firebase.getAllOneToOneMessages(combinedId);
+    }
+
+    public LiveData<List<AllChatRecieverInfoModel>> getAllChatListOfAParticularUser(String userID) {
+        return firebase.getAllChatListOfAParticularUser(userID);
+    }
+
+    public void turnBooleanMsgReadTrue(String senderUID, String recieverUID) {
+        firebase.turnBooleanMsgReadTrue(senderUID,recieverUID);
     }
 }

@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.varunsaini.android.bestchatapp.Repository;
+import com.varunsaini.android.bestchatapp.models.AllChatRecieverInfoModel;
 import com.varunsaini.android.bestchatapp.models.OneToOneMessageModel;
 
 import java.util.List;
@@ -14,23 +15,17 @@ import java.util.List;
 public class AllChatViewModel extends AndroidViewModel {
 
     Repository repository;
-    LiveData<List<OneToOneMessageModel>> oneToOneListLive;
+    LiveData<List<AllChatRecieverInfoModel>> allChatListOfAUser;
 
     public AllChatViewModel(@NonNull Application application) {
         super(application);
         repository = new Repository(application);
     }
 
-    public LiveData<List<OneToOneMessageModel>> getAllOneToOneMessages(String senderID,String recieverID){
-        String combinedId;
-        if(senderID.compareTo(recieverID)>0){
-            combinedId = senderID+recieverID;
-        }else{
-            combinedId = recieverID+senderID;
-        }
+    public LiveData<List<AllChatRecieverInfoModel>> getAllChatListOfAParticularUser(String userID){
         Log.d("sas", "onClick: "+"in vm");
-        oneToOneListLive = repository.getAllOneToOneMessages(combinedId);
-        return oneToOneListLive;
+        allChatListOfAUser = repository.getAllChatListOfAParticularUser(userID);
+        return allChatListOfAUser;
     }
 
 }
