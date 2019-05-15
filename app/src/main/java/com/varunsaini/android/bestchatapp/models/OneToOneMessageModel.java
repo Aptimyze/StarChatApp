@@ -2,7 +2,8 @@ package com.varunsaini.android.bestchatapp.models;
 
 public class OneToOneMessageModel {
 
-    public String messageText, senderID, recieverID, senderName, timeStamp;
+    public String messageText, senderID, recieverID, senderName;
+    public String timeStamp;
 
     public OneToOneMessageModel() {
     }

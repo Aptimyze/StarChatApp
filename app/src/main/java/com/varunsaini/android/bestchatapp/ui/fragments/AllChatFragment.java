@@ -4,12 +4,12 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,10 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.varunsaini.android.bestchatapp.AppPreferences;
 import com.varunsaini.android.bestchatapp.R;
 import com.varunsaini.android.bestchatapp.models.AllChatRecieverInfoModel;
 import com.varunsaini.android.bestchatapp.ui.activities.SearchActivity;
+import com.varunsaini.android.bestchatapp.ui.viewholders.AllChatFragmentsRecycler;
 import com.varunsaini.android.bestchatapp.viewmodels.AllChatViewModel;
 
 import java.util.List;
@@ -33,6 +37,9 @@ public class AllChatFragment extends Fragment {
     private View v;
     RecyclerView recyclerView;
     AllChatViewModel allChatViewModel;
+    private InterstitialAd mInterstitialAd;
+    private Context mContext;
+
 
     public AllChatFragment() {
         // Required empty public constructor
@@ -51,17 +58,24 @@ public class AllChatFragment extends Fragment {
         AppPreferences appPreferences = new AppPreferences(getContext());
         senderUID= appPreferences.readUId();
         senderName = appPreferences.readUName();
+        allChatViewModel.mContext = getContext();
 
         allChatViewModel.getAllChatListOfAParticularUser(senderUID).observe(getActivity(), new Observer<List<AllChatRecieverInfoModel>>() {
             @Override
             public void onChanged(@Nullable List<AllChatRecieverInfoModel> allChatRecieverInfoModels) {
-                recyclerView.setAdapter(new AllFragmentsRecycler(getContext(),allChatRecieverInfoModels));
+                recyclerView.setAdapter(new AllChatFragmentsRecycler(mContext ,allChatRecieverInfoModels));
             }
         });
 
 
 
         return v;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext  = context;
     }
 
     private void initViews() {
@@ -88,5 +102,11 @@ public class AllChatFragment extends Fragment {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 }

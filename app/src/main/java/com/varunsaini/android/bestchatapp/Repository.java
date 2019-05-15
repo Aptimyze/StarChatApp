@@ -2,11 +2,15 @@ package com.varunsaini.android.bestchatapp;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.net.Uri;
 import android.util.Log;
 
 import com.varunsaini.android.bestchatapp.models.AllChatRecieverInfoModel;
+import com.varunsaini.android.bestchatapp.models.NewUserInDbModel;
 import com.varunsaini.android.bestchatapp.models.OneToOneMessageModel;
 import com.varunsaini.android.bestchatapp.models.SearchedUserModel;
+import com.varunsaini.android.bestchatapp.models.UserParticularDetailModel;
 import com.varunsaini.android.bestchatapp.network.Firebase;
 
 import java.util.List;
@@ -21,8 +25,8 @@ public class Repository {
         firebase = new Firebase(application);
     }
 
-    public void getAllGroupsOfAUser() {
-        firebase.getAllGroupsOfAUser();
+    public MutableLiveData<SearchedUserModel> getRandomUsers() {
+        return firebase.getRandomUsers();
     }
 
     public void addNewGroup(String title, String lastMsg, String timeStamp) {
@@ -33,8 +37,9 @@ public class Repository {
         return firebase.returnMatchedUsers(search_text);
     }
 
-    public void writeNewMessageOTO(String messageText, String senderID, String recieverID,String senderName,String recieverName, String timeStamp) {
-        firebase.writeNewMessageOTO(messageText,senderID,recieverID,senderName,recieverName, timeStamp);
+    public void writeNewMessageOTO(String messageText, String senderID, String recieverID,String senderName,String recieverName
+            ,String senderProfilePic, String recieverProfilePic, String timeStamp) {
+        firebase.writeNewMessageOTO(messageText,senderID,recieverID,senderName,recieverName, senderProfilePic , recieverProfilePic, timeStamp);
     }
 
     public LiveData<List<OneToOneMessageModel>> getAllOneToOneMessages(String combinedId) {
@@ -48,5 +53,29 @@ public class Repository {
 
     public void turnBooleanMsgReadTrue(String senderUID, String recieverUID) {
         firebase.turnBooleanMsgReadTrue(senderUID,recieverUID);
+    }
+
+    public String getUserNameFromUID(String recieverUID) {
+        return firebase.getUserNameFromUID(recieverUID);
+    }
+
+    public void setProfilePicture(Uri uri,String myUID) {
+        firebase.setProfilePicture(uri,myUID);
+    }
+
+    public LiveData<NewUserInDbModel> getAllSettingsOfAUser(String myUID){
+        return firebase.getAllSettingsOfAUser(myUID);
+    }
+
+    public LiveData<UserParticularDetailModel> getProfilePicAndUserNameFromUid(String UID) {
+        return firebase.getProfilePicAndUserNameFromUid(UID);
+    }
+
+    public MutableLiveData<UserParticularDetailModel> getYourParticularDetails(String yourUID) {
+        return firebase.getYourParticularDetails(yourUID);
+    }
+
+    public void setAllSettingsDetails(String uid, NewUserInDbModel userDetails) {
+        firebase.setAllSettingsDetails(uid,userDetails);
     }
 }

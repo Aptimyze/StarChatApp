@@ -5,4 +5,9 @@
     <color name="colorAccent">#fa6060</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="pink_grad_start">#ff3683</color>
+    <color name="pink_grad_end">#ff7685</color>
+    <color name="their_message_color">#ffffff</color>
+    <color name="their_message_box_color">#aeb7c5</color>
+    <color name="gray">#40000000</color>
 </resources>

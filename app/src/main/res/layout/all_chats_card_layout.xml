@@ -1,65 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/full_card"
-    android:padding="16dp"
-    android:background="@drawable/message_border"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <ImageView
-        android:src="@drawable/test"
-        android:id="@+id/profile_pic"
-        android:layout_width="48dp"
-        android:layout_height="match_parent"
-        />
-
-    <LinearLayout
-        android:padding="8dp"
-        android:orientation="vertical"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/full_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/name"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"/>
-
-
-        <TextView
-            android:id="@+id/last_message"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Message"/>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/is_delivered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delivered"/>
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:text="Time of Message" />
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:paddingRight="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:src="@drawable/test"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_opensensregular"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/last_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_opensensregular"
+                android:maxLines="1"
+                android:text="Message"
+                android:textColor="@color/black" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/is_delivered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivered"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/font_opensensregular"
+                    android:gravity="start"
+                    android:text="Time of Message" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/not_read_indicator"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_adjust_black_24dp"/>
     </LinearLayout>
 
-
-
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        />
 </LinearLayout>

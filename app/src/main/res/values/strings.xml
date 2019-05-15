@@ -3,4 +3,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="logout">Logout</string>
+    <string name="fields_empty">Fields can\'t be empty</string>
+    <string name="weak_password">Password should be more than 6 characters.</string>
+    <string name="invalid_credentials">Invalid Credentials</string>
+    <string name="username_exist">Username not available</string>
+    <string name="select_attachment_type">Select Attachment Type</string>
+    <string name="connect_dialog_box">You are not connected to Internet. Connect to Internet to Proceed. Now the Application will close\nConnect now to proceed without closing the Application</string>
+    <string name="age">Age</string>
+    <string name="random_chat_click_btn">First Generate a Random Online User By clicking on Button on the Top</string>
+    <string name="nationality">Nationality</string>
+    <string name="randomUserBtn">Generate Random Online User</string>
+    <string name="connect_to_sync">You are not connected to internet. Connect to Internet to sync your chats.</string>
+    <string name="banner_home_footer">ca-app-pub-4286405457898241/3510473902</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-4286405457898241/8701723859</string>
 </resources>

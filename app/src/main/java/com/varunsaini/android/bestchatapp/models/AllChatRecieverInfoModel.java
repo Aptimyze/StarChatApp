@@ -1,9 +1,12 @@
 package com.varunsaini.android.bestchatapp.models;
 
-public class AllChatRecieverInfoModel {
+import android.support.annotation.NonNull;
 
-    public String recieverName, recieverUid, lastMessage, timestamp,lastMsgSentBy;
+public class AllChatRecieverInfoModel  implements Comparable< AllChatRecieverInfoModel >{
+
+    public String recieverName, recieverUid, lastMessage,lastMsgSentBy, recieverProfilePic;
     public boolean isLastMsgRead = false;
+    public String timestamp;
 
     public AllChatRecieverInfoModel(){}
 
@@ -16,4 +19,18 @@ public class AllChatRecieverInfoModel {
         this.isLastMsgRead = isLastMsgRead;
     }
 
+    public AllChatRecieverInfoModel(String recieverName, String recieverUid, String lastMessage, String timestamp, String lastMsgSentBy, String recieverProfilePic, boolean isLastMsgRead) {
+        this.recieverName = recieverName;
+        this.recieverUid = recieverUid;
+        this.lastMessage = lastMessage;
+        this.timestamp = timestamp;
+        this.lastMsgSentBy = lastMsgSentBy;
+        this.recieverProfilePic = recieverProfilePic;
+        this.isLastMsgRead = isLastMsgRead;
+    }
+
+    @Override
+    public int compareTo(@NonNull AllChatRecieverInfoModel o) {
+        return this.timestamp.compareTo(o.timestamp);
+    }
 }

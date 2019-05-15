@@ -4,27 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/chat_background"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.activities.ChatScreenActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
+        android:padding="8dp"
+        tools:listitem="@layout/message_layout"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
     <LinearLayout
         android:layout_weight="0"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/message_et"
+            android:inputType="textCapSentences"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Your message here" />
+
+        <ImageView
+            android:onClick="selectAtachments"
+            android:id="@+id/attachments_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_attachment_black_24dp"/>
 
         <ImageButton
             android:id="@+id/send_ib"
