@@ -9,8 +9,8 @@
     <item
         android:id="@+id/action_groups"
         android:state_checked="false"
-        android:icon="@drawable/ic_group_black_24dp"
-        android:title="Groups" />
+        android:icon="@drawable/ic_person_add_black_24dp"
+        android:title="Random Users" />
     <item
         android:id="@+id/action_account"
         android:state_checked="false"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BestChatApp</string>
+    <string name="app_name">Random Stranger Chatr</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -20,4 +20,5 @@
     <string name="connect_to_sync">You are not connected to internet. Connect to Internet to sync your chats.</string>
     <string name="banner_home_footer">ca-app-pub-4286405457898241/3510473902</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-4286405457898241/8701723859</string>
+    <string name="gender">Gender</string>
 </resources>

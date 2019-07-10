@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.varunsaini.android.bestchatapp">
+    package="com.chatr.random.stranger">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -23,19 +23,19 @@
             android:value="ca-app-pub-4286405457898241~2963678991"/>
 
         <service
-            android:name=".network.MyFirebaseMessagingService">
+            android:name="com.chatr.random.stranger.network.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <activity
-            android:name=".ui.activities.FullScreenImageActivity"
+            android:name="com.chatr.random.stranger.ui.activities.FullScreenImageActivity"
             android:theme="@style/noAnimTheme" />
         <activity
-            android:name=".ui.activities.SignUpActivity"
+            android:name="com.chatr.random.stranger.ui.activities.SignUpActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.SplashActivity">
+        <activity android:name="com.chatr.random.stranger.ui.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -43,13 +43,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.ChatScreenActivity" />
-        <activity android:name=".ui.activities.SearchActivity" />
-        <activity android:name=".ui.activities.MainBaseActivity" />
+        <activity android:name="com.chatr.random.stranger.ui.activities.ChatScreenActivity" />
+        <activity android:name="com.chatr.random.stranger.ui.activities.SearchActivity" />
+        <activity android:name="com.chatr.random.stranger.ui.activities.MainBaseActivity" />
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name="com.chatr.random.stranger.ui.activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.MainActivity" />
+        <activity android:name="com.chatr.random.stranger.ui.activities.MainActivity" />
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />

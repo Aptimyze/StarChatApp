@@ -50,17 +50,28 @@
 
         </LinearLayout>
 
+        <TextView
+            android:textColor="@color/black"
+            android:paddingTop="10dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Users are genterated randomly. So if you see users repeating then also there are always online users"/>
+
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:padding="8dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -86,18 +97,23 @@
                     android:textColor="@color/black"
                     android:textSize="22sp" />
 
-
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/username_tv"
+                    android:layout_height="wrap_content">
                 <TextView
                     android:text="Status"
                     android:id="@+id/status_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/username_tv"
                     android:gravity="center"
                     android:padding="8dp"
                     android:textSize="20sp" />
 
-                <TextView
+            </ScrollView>
+
+
+            <TextView
                     android:foreground="?android:attr/selectableItemBackground"
                     android:id="@+id/start_chat"
                     android:layout_width="match_parent"
@@ -109,9 +125,23 @@
                     android:text="Start Chat"
                     android:textColor="@color/white" />
 
+                <com.github.ybq.android.spinkit.SpinKitView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/spin_kit"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    style="@style/SpinKitView.Circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:SpinKit_Color="@color/colorAccent" />
+
             </RelativeLayout>
 
+
+
         </android.support.v7.widget.CardView>
+
 
 
     </LinearLayout>
