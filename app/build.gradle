@@ -85,6 +85,7 @@ dependencies {
     implementation 'com.karumi:dexter:5.0.0'
     compile 'com.vistrav:ask:2.5'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.chootdev:timezago:1.1.8'
 
 
 

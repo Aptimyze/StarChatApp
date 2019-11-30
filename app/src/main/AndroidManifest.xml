@@ -35,7 +35,8 @@
         <activity
             android:name="com.chatr.random.stranger.ui.activities.SignUpActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.chatr.random.stranger.ui.activities.SplashActivity">
+        <activity android:name="com.chatr.random.stranger.ui.activities.SplashActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
